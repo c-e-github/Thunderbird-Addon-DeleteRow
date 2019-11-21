@@ -6,10 +6,7 @@ var myapi = class extends ExtensionCommon.ExtensionAPI {
     return {
       myapi: {
         async deleteTableRow() {
-          let recentWindow = Services.wm.getMostRecentWindow("messageCompose");
-
-recentWindow.alert("Reached this line!");
-
+          let recentWindow = Services.wm.getMostRecentWindow("msgcompose");
           if (recentWindow) {
              var editor = GetCurrentTableEditor();
              editor.beginTransaction();
