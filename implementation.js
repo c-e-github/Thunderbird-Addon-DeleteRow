@@ -8,11 +8,11 @@ var myapi = class extends ExtensionCommon.ExtensionAPI {
         async deleteTableRow() {
           let recentWindow = Services.wm.getMostRecentWindow("msgcompose");
           if (recentWindow) {
-             var editor = GetCurrentTableEditor();
+             var editor = recentWindow.GetCurrentTableEditor();
              editor.beginTransaction();
              editor.deleteTableRow(1);
              editor.endTransaction();
-             window.content.focus();
+             recentWindow.window.content.focus();
           }
         },
       },
